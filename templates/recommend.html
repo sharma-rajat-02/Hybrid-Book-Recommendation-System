@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookBuddy | Recommendations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-transparent p-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-yellow-400">BookBuddy</h1>
+        <ul class="flex space-x-6">
+            <li><a href="/" class="hover:text-yellow-300">Home</a></li>
+            <li><a href="/recommend" class="hover:text-yellow-300">Recommend</a></li>
+            <li><a href="#" class="hover:text-yellow-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Recommendations -->
+    <div class="container mx-auto px-4 mt-8">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Recommendations for "{{ book_title }}"</h2>
+        {% if recommendations %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {% for book in recommendations %}
+            <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                <img src="{{ book.image }}" alt="Book Cover" class="w-60 h-80 object-cover">
+                <div class="p-4">
+                    <p class="text-xl font-semibold mb-2">{{ book.title }}</p>
+                    <p class="text-sm text-gray-300">by {{ book.author }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-center text-red-500">Sorry, no recommendations found for "{{ book_title }}".</p>
+        {% endif %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 py-6 text-center text-gray-400 text-sm">
+        &copy; 2025 BookBuddy. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
