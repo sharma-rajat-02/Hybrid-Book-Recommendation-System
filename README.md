@@ -31,4 +31,4 @@ The "Consensus Rank" is derived by aggregating scores from:
 ## ⚙️ Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/sharma-rajat-02/book-recommender.git](https://github.com/sharma-rajat-02/book-recommender.git)
+   git clone [https://github.com/sharma-rajat-02/book-recommender.git](https://github.com/sharma-rajat-02/Hybrid-Book-Recommendation-System)
