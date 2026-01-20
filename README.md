@@ -19,14 +19,14 @@ The "Consensus Rank" is derived by aggregating scores from:
 
 
 ## 📊 Performance Metrics
-* **Accuracy:** Achieved **97% accuracy** in book suggestions within the integrated web environment.
-* **Efficiency:** 85% measurable efficiency gains through optimized development and responsible AI adoption.
+* **Accuracy:** Variable accuracy due to limited number of books in the dataset.
+* **Efficiency:** Measurable efficiency gains through optimized development and responsible AI adoption.
 * **Validation:** Real-time **Hit Rate @ 5** pipeline used to verify suggestions against historical user interactions.
 
 ## 💻 Tech Stack
 * **Backend:** Python, Flask
 * **Data Science:** Scikit-Learn, SciPy, Pandas, NumPy
-* **Frontend:** Responsive Web Interface
+* **Frontend:** HTML
 
 ## ⚙️ Installation
 1. **Clone the repository:**
