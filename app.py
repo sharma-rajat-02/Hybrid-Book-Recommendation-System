@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request
 import pandas as pd
 import numpy as np
@@ -6,13 +5,19 @@ from scipy.spatial.distance import pdist, squareform
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.model_selection import train_test_split
 from collections import Counter
+import os
 
 app = Flask(__name__)
 
-# --- DATA PREPROCESSING ---
-base_dir = os.path.dirname(os.path.abspath(__file__))
-books = pd.read_csv(os.path.join(base_dir, "Books.csv"))
-ratings = pd.read_csv(os.path.join(base_dir, "Ratings.csv"))
+# This gets the directory where your script is currently running
+base_path = os.path.dirname(__file__)
+
+# Join the base path with your filenames
+books_path = os.path.join(base_path, 'Books.csv')
+ratings_path = os.path.join(base_path, 'Ratings.csv')
+
+books = pd.read_csv(books_path)
+ratings = pd.read_csv(ratings_path)
 
 # Merge and clean data
 ratings_with_name = ratings.merge(books, on='ISBN')
@@ -144,5 +149,5 @@ def recommend():
                            match_score=current_hit_rate,
                            system_accuracy=SYSTEM_ACCURACY)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
